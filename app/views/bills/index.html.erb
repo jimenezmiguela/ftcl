@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <!-- <th>First name</th>
+      <th>Last name</th> -->
+
+      <!-- Additional Methods in the Customer Model Class -->
+      <th> Product ID</th>
+
+      <th>Product Count</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bills.each do |bill| %>
+      <tr>
+
+        <td><%= bill.measure %></td>
+        <td><%= bill.subject %></td>
+        <td><%= bill.author %></td>
+        <td><%= bill.status %></td>
+
+        <td><%= link_to 'Show', bill %></td>
+        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
+        <td>
+          <%= button_to('Destroy', bill, :method => :delete, :data => {:turbo_confirm => 'Delete for real?'}) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New bill', new_bill_path %>
+
+
+
+
+
+<%# substitute %>
+<!-- <h1>Bills#index</h1>
+<p>Find me in app/views/bills/index.html.erb</p> -->
