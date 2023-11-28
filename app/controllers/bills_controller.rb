@@ -60,7 +60,6 @@ end
 
 private
 def set_bill
-  # byebug
   @bill = Bill.find(params[:id])
 end
 
