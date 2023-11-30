@@ -1,2 +1,9 @@
-<h1>Bills#edit</h1>
-<p>Find me in app/views/bills/edit.html.erb</p>
+<h1>Editing Bill</h1>
+
+<%= render 'form', bill: @bill %>
+
+<%= link_to 'Show This Bill', @bill, class: "btn btn-primary" %> |
+<%= link_to 'Back To Bills', bills_path, class: "btn btn-primary" %>
+
+
+

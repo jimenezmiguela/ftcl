@@ -1,2 +1,25 @@
-<h1>Bills#show</h1>
-<p>Find me in app/views/bills/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Measure:</strong>
+  <%= @bill.measure %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @bill.subject %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @bill.author %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @bill.status %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill), class: "btn btn-primary" %> |
+<%= link_to 'Back', bills_path, class: "btn btn-primary" %>
+

@@ -1,4 +1,6 @@
-<p style="color: green"><%= notice %>
+<p 
+  style="color: green">
+  <% notice %>
 </p>
 
 <h1>Users</h1>
@@ -6,6 +8,9 @@
 <table class="table">
   <thead>
     <tr>
+      <th>
+        User ID
+      </th >
       <th>
         Full Name
       </th >
@@ -21,33 +26,27 @@
       <tr>
         <td>
           <i class="fas fa-bolt">
-            <%= " " + user.full_name %>
+            <%= user.id %>
           </i>
+        </td>
+        <td>        
+          <%=user.full_name %>        
         </td>
         <td>
           <%= user.category %>
         </td>
         <td>
-          <%= link_to('Show', user) %>
+          <%= link_to('Show', user, class: "btn btn-primary") %>
         </td>
         <td>
-          <%= link_to('Edit', edit_user_path(user)) %>
+          <%= link_to('Edit', edit_user_path(user), class: "btn btn-primary") %>
         </td>
         <td>
-          <%= link_to('Destroy', user) %>
+          <%= button_to('Destroy', user, class: "btn btn-primary", method: :delete, data: { turbo_confirm: "Are you sure?"}) %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<!-- <div id="users">
-  < @users.each do |user| %>
-    <= render(user) %>
-    <p>
-      <= link_to "Show this user", user %>
-    </p>
-  < end %>
-</div> -->
 
 <%= link_to "New user", new_user_path, class: "btn btn-primary" %>
