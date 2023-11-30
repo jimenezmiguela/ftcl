@@ -2,11 +2,7 @@ class BillsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
 
-  # %i[ ] # Non-interpolated Array of symbols, separated by whitespace
-  # %w(foo bar) is a shortcut for ["foo", "bar"]. Meaning it's a notation to write an array of strings separated by spaces instead of commas and without quotes around them.
-
   before_action :set_bill, only: %i[ show edit update destroy ]
-  # layout 'bill_layout'
 
   def index
     @bills=Bill.all
@@ -22,14 +18,15 @@ class BillsController < ApplicationController
 
   def create
     @bill = Bill.new(bill_params)
-    # byebug
-    if @bill.save
-      flash.notice = "The bill record was created successfully."
-      redirect_to @bill
 
-    else
-      flash.now.alert = @bill.errors.full_messages.to_sentence
-      render :new
+    respond_to do |format|
+      if @bill.save
+        format.html { redirect_to bill_url(@bill), notice: "Bill was successfully created." }
+        format.json { render :show, status: :created, location: @bill }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @bill.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -38,12 +35,15 @@ class BillsController < ApplicationController
 
   def update
     @bill.update(bill_params)
-    if   flash.notice = "The bill record was updated successfully."
-      redirect_to @bill
 
-    else
-      flash.now.alert = @bill.errors.full_messages.to_sentence
-      render :edit
+    respond_to do |format|
+      if @bill.update(bill_params)
+        format.html { redirect_to bill_url(@bill), notice: "Bill was successfully updated." }
+        format.json { render :show, status: :ok, location: @bill }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @bill.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -64,7 +64,7 @@ def set_bill
 end
 
 def bill_params
-  params.require(:bill).permit(:measure, :subject, :author, :status, :summary, :vote, :appropriation, :fiscal_committee, :local_program, :high_priority, :category)
+  params.require(:bill).permit(:user_id, :measure, :subject, :author, :status, :summary, :vote, :appropriation, :fiscal_committee, :local_program, :high_priority, :category)
 end
 
 def catch_not_found(e)
