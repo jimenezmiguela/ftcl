@@ -1,0 +1,166 @@
+<p 
+  style="color: green">
+  <%= notice %>
+</p>
+
+<h1>Measures</h1>
+
+<%= form_with url: measures_path, local: true, data: { turbo: false } do |f| %>
+  <div class="input-group mb-3">
+    <form accept-charset="utf-8">
+      <select>
+        <option>
+        -- Select Categories Code --
+        </option>
+        <option>
+            All
+        </option>
+        <option>
+          BPC - Business and Professions
+        </option>
+        <option>
+          CONS - California Constitution
+        </option>
+        <option>
+            CIV - Civil
+        </option>
+        <option>
+            CCP - Civil Procedure
+        </option>
+        <option>
+            CORP - Corporations
+        </option>
+        <option>
+            EDC - Education
+        </option>
+        <option>
+            ELEC - Elections
+        </option>
+        <option>
+            EVID - Evidence
+        </option>
+        <option>
+            FAM - Family
+        </option>
+        <option>
+            FIN - Financial
+        </option>
+        <option>
+            FGC - Fish and Game
+        </option>
+        <option>
+            FAC - Food and Agricultural
+        </option>
+        <option>
+            GOV - Government
+        </option>
+        <option>
+            HNC - Harbors and Navigation
+        </option>
+        <option>
+            HSC - Health and Safety
+        </option>
+        <option>
+            INS - Insurance
+        </option>
+        <option>
+            LAB - Labor
+        </option>
+        <option>
+            MVC - Military and Veterans
+        </option>
+        <option>
+            PEN - Penal
+        </option>
+        <option>
+            PROB - Probate
+        </option>
+        <option>
+            PCC - Public Contract
+        </option>
+        <option>
+            PRC - Public Resources
+        </option>
+        <option>
+            PUC - Public Utilities
+        </option>
+        <option>
+            RTC - Revenue and Taxation
+        </option>
+        <option>
+            SHC - Streets and Highways
+        </option>
+        <option>
+            UIC - Unemployment Insurance
+        </option>
+        <option>
+            VEH - Vehicle
+        </option>
+        <option>
+            WAT - Water
+        </option>
+        <option>
+            WIC - Welfare and Institutions
+        </option>
+      </select>
+  </div>
+  Enter Legislation Category:
+  <br>
+  <div>
+    <% f.label :name, style: "display: block" %>
+    <%= f.text_field :name %> 
+  </div>
+  <div>
+    <%= f.submit :Submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Measure
+      </th>
+      <th>
+        Subject
+      </th>
+      <th>
+        Author
+      </th>
+      <th>
+        Status
+      </th>
+      <th colspan="3">
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @all_measures.each do |measure| %>
+        <% measure_arr = [] %>
+        <% measure_arr = measure.split(",")%>
+      <tr>
+        <td>
+        <i class="fas fa-bolt">
+        <%= measure_arr[0] %>
+        </td>
+        <td>
+        <%= measure_arr[1] %>
+        </td>
+        <td>
+        <%= measure_arr[2] %>
+        </td>
+        <td>
+        <%= measure_arr[3] %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New bill', new_bill_path, class: "btn btn-primary"  %>
+
+
+
+
