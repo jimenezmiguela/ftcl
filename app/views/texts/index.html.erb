@@ -1,0 +1,69 @@
+<p 
+  style="color: green">
+  <%= notice %>
+</p>
+
+<h1>Text</h1>
+
+<%= form_with url: texts_path, local: true, data: { turbo: false } do |f| %>
+    Enter Bill Measure
+    <br>
+    <div>
+        <% f.label :name, style: "display: block" %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.submit :Submit, class: "btn btn-primary" %>
+    </div>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+      Summary
+      </th>
+      <th>
+        Vote
+      </th>
+      <th>
+        Appropriation
+      </th>
+      <th>
+        Fiscal Committee
+      </th>
+      <th>
+        Local Program
+      </th>
+      <th colspan="3">
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+        <%= @text[0] %>
+        </td>
+        <td>
+        <%= @text[1] %>
+        </td>
+        <td>
+        <%= @text[2] %>
+        </td>
+        <td>
+        <%= @text[3] %>
+        </td>
+        <td>
+        <%= @text[4] %>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New bill', new_bill_path, class: "btn btn-primary"  %>
+
+
+
+
