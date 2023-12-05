@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: ftcl_production
-  username: ftcl
-  password: <%= ENV["FTCL_DATABASE_PASSWORD"] %>
+ url: <%= ENV['DATABASE_URL'] %>
