@@ -12,30 +12,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user %>
-    <%= form.collection_select :user_id, User.all, :id, :full_name, include_blank: true %>
+  <div>
+    <%= form.label :user, style: "display: block" %>
+    <%= form.collection_select :user_id, User.all, :id, :full_name, :prompt => '-- Choose A User --' %>
+  </div>
 
-    <%= form.label :measure %>
+  <div>
+    <%= form.label :measure, style: "display: block" %>
     <%= form.text_field :measure %>
   </div>
 
-  <div class="field">
-    <%= form.label :subject %>
+  <div>
+    <%= form.label :subject, style: "display: block" %>
     <%= form.text_field :subject %>
   </div>
 
-  <div class="field">
-  <%= form.label :author %>
-  <%= form.text_field :author %>
-</div>
+  <div>
+    <%= form.label :author, style: "display: block" %>
+    <%= form.text_field :author %>
+  </div>
 
-<div class="field">
-<%= form.label :status %>
-<%= form.text_field :status %>
-</div>
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
 
-  <div class="actions">
+  <div>
     <%= form.submit :Submit, class: "btn btn-primary" %>
   </div>
 <% end %>
