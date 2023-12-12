@@ -3,9 +3,9 @@
   <% notice %>
 </p>
 
-<h1>Users</h1>
+<h3>Users</h3>
 
-<table class="table">
+<table class="table table-warning">
   <thead>
     <tr>
       <th>
@@ -36,17 +36,17 @@
           <%= user.category %>
         </td>
         <td>
-          <%= link_to('Show', user, class: "btn btn-primary") %>
+          <%= link_to('Show', user, class: "btn") %>
         </td>
         <td>
-          <%= link_to('Edit', edit_user_path(user), class: "btn btn-primary") %>
+          <%= link_to('Edit', edit_user_path(user), class: "btn") %>
         </td>
         <td>
-          <%= button_to('Destroy', user, class: "btn btn-primary", method: :delete, data: { turbo_confirm: "Are you sure?"}) %>
+          <%= button_to('Destroy', user, class: "btn", method: :delete, data: { turbo_confirm: "Are you sure?"}) %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "New user", new_user_path, class: "btn btn-primary" %>
+<%= link_to "New user", new_user_path, class: "btn btn-warning" %>

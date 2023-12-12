@@ -3,7 +3,7 @@
   <%= notice %>
 </p>
 
-<h1>Text</h1>
+<h3>Text</h3>
 
 <%= form_with url: texts_path, local: true, data: { turbo: false } do |f| %>
     Enter Bill Measure
@@ -13,57 +13,58 @@
         <%= f.text_field :name %>
     </div>
     <div>
-        <%= f.submit :Submit, class: "btn btn-primary" %>
+        <%= f.submit :Submit, class: "btn" %>
     </div>
 <% end %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>
-      Summary
-      </th>
-      <th>
-        Vote
-      </th>
-      <th>
-        Appropriation
-      </th>
-      <th>
-        Fiscal Committee
-      </th>
-      <th>
-        Local Program
-      </th>
-      <th colspan="3">
-      </th>
-    </tr>
-  </thead>
-  <tbody>
+<br>
+
+  <table class="table table-warning">
+    <thead>
       <tr>
-        <td>
-        <%= @text[0] %>
-        </td>
-        <td>
-        <%= @text[1] %>
-        </td>
-        <td>
-        <%= @text[2] %>
-        </td>
-        <td>
-        <%= @text[3] %>
-        </td>
-        <td>
-        <%= @text[4] %>
-        </td>
+        <th>
+        Summary
+        </th>
+        <th>
+          Vote
+        </th>
+        <th>
+          Appropriation
+        </th>
+        <th>
+          Fiscal Committee
+        </th>
+        <th>
+          Local Program
+        </th>
+        <th colspan="3">
+        </th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          <%= @text[0] %>
+          </td>
+          <td>
+          <%= @text[1] %>
+          </td>
+          <td>
+          <%= @text[2] %>
+          </td>
+          <td>
+          <%= @text[3] %>
+          </td>
+          <td>
+          <%= @text[4] %>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
 <br>
 
-<%= link_to 'New bill', new_bill_path, class: "btn btn-primary"  %>
-
-
+<%= link_to 'New bill', new_bill_path, class: "btn"  %>
+</div>
 
 
