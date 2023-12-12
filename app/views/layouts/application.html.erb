@@ -12,20 +12,28 @@
 
   <body>
 
-    <div class="banner-background header mt-4 p-5 bg-primary text-white rounded">
-      <h1>Finding and Tracking California Legislation</h1>
-      <p></p>
+    <div class="banner-background header mt-4 p-5 rounded">
+    <div class="row">
+      <div class="col-1">
+        <img src="<%= image_path('bear.png') %>"class="mb-4 img-fluid rounded" alt="gavel">
+      </div>
+      <div class="col">
+        <h1>Finding and Tracking California Legislation</h2>
+      </div>
+      <div class="col-1">
+        <img src="<%= image_path('gavels.png') %>" class="mb-4 img-fluid rounded" alt="gavel">
+      </div>
     </div>
 
     <% if flash[:alert].present? %>
       <p class="my_alert"><%= flash[:alert] %></p>
     <% end %>
 
-    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-sm rounded">
         <div class="container-fluid mb-0">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Users
               </a>
               <ul class="dropdown-menu">
@@ -34,7 +42,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Bills
               </a>
               <ul class="dropdown-menu">
@@ -43,7 +51,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Measures
               </a>
               <ul class="dropdown-menu">
@@ -52,7 +60,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Text
               </a>
               <ul class="dropdown-menu">

@@ -3,23 +3,20 @@
   <%= notice %>
 </p>
 
-<h1>Measures</h1>
+<h3>Measures</h3>
 
 <%= form_with url: measures_path, local: true, data: { turbo: false } do |f| %>
-
-  <div class="dropdown">
     <% f.label :name %><br>
     <%= f.select :name, ['All', 'BPC','CONS','CIV', 'CCP', 'CORP', 'EDC', 'ELEC', 'EVID', 'FAM', 'FIN', 'FGC', 'FAC', 'GOV', 'HNC', 
     'HSC', 'INS', 'LAB', 'MVC', 'PEN', 'PROB', 'PCC', 'PRC', 'PUC', 'RTC', 'SHC', 'UIC', 'VEH', 'WAT', 'WIC' ], :prompt => 'Choose A Category', style: "display: block" %>
   <div>
-  <div>
-    <%= f.submit :Submit, class: "btn btn-primary" %>
+    <%= f.submit :Submit,  class: "btn" %>
   </div>
 <% end %>
 
 <br>
 
-<table class="table">
+<table class="table table-warning">
   <thead>
     <tr>
       <th>
@@ -63,7 +60,7 @@
 
 <br>
 
-<%= link_to 'New bill', new_bill_path, class: "btn btn-primary"  %>
+<%= link_to 'New bill', new_bill_path, class: "btn"  %>
 
 
 

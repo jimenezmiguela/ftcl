@@ -8,10 +8,77 @@ $fa-font-path: "./webfonts";
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 
+.banner-background {
+    background-size: cover;
+    background-color: #d7ba79;
+  }
+
 @font-face {
     font-family: 'Akira';
     src: url('Akira Expanded Demo.otf');
 }
-h1 {
+
+h1, h2, h3 {
     font-family: 'Akira';
+    color: #044660;
   }
+
+p {
+  font-family: 'Akira';
+  color: #3d0c02;
+}
+
+body {
+background-color: #9ab1bb;
+// font
+color: #044660;
+margin: 33px;
+}
+
+nav {
+  background-color: #044660;
+}
+
+.btn {
+  background-color: #9ab1bb;
+  border-color:  #044660;
+  color: #044660;
+}
+
+.btn:hover {
+  background-color: #acd4b1;
+  border-color:  #044660;
+  color: #044660;
+}
+
+.btn:active {
+  background-color: #d4c4c4;
+  border-color:  #044660;
+  color: #044660;
+}
+
+input[type="text"], textarea {
+  background-color : #d4c4c4; 
+}
+
+.dropdown-menu {
+  background-color: #9ab1bb;
+  a:hover {
+    background-color: #acd4b1;
+  }
+  a:active {
+    background-color: #d4c4c4;
+    color: #044660;
+  }
+}
+
+.custom-select {
+  background-color: #9ab1bb;
+  a:hover {
+    background-color: #acd4b1;
+  }
+  a:active {
+    background-color: #d4c4c4;
+    color: #044660;
+  }
+}

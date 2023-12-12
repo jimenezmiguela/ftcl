@@ -3,66 +3,65 @@
   <%= notice %>
 </p>
 
-<h1>Bills</h1>
+<h3>Bills</h3>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>
-        Bill ID
-      </th>
-      <th>
-        Measure
-      </th>
-      <th>
-        Subject
-      </th>
-      <th>
-        Author
-      </th>
-      <th>
-        Status
-      </th>
-      <th colspan="3">
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @bills.each do |bill| %>
+  <table class="table table-warning">
+    <thead>
       <tr>
-        <td>
-        <i class="fas fa-bolt">
-          <%= bill.id %>
-        </td>
-        <td>
-          <%= bill.measure %>
-        </td>
-        <td>
-          <%= bill.subject %>
-        </td>
-        <td>
-          <%= bill.author %>
-        </td>
-        <td>
-          <%= bill.status %>
-        </td>
-        <td>
-          <%= link_to 'Show', bill, class: "btn btn-primary" %>
-        </td>
-        <td>
-          <%= link_to 'Edit', edit_bill_path(bill), class: "btn btn-primary" %>
-        </td>
-        <td>
-          <%= button_to('Destroy', bill, class: "btn btn-primary", :method => :delete, :data => {:turbo_confirm => 'Delete for real?'}) %>
-        </td>
+        <th>
+          Bill ID
+        </th>
+        <th>
+          Measure
+        </th>
+        <th>
+          Subject
+        </th>
+        <th>
+          Author
+        </th>
+        <th>
+          Status
+        </th>
+        <th colspan="3">
+        </th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <% @bills.each do |bill| %>
+        <tr>
+          <td>
+          <i class="fas fa-bolt">
+            <%= bill.id %>
+          </td>
+          <td>
+            <%= bill.measure %>
+          </td>
+          <td>
+            <%= bill.subject %>
+          </td>
+          <td>
+            <%= bill.author %>
+          </td>
+          <td>
+            <%= bill.status %>
+          </td>
+          <td>
+            <%= link_to 'Show', bill, class: "btn" %>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_bill_path(bill), class: "btn" %>
+          </td>
+          <td>
+            <%= button_to('Destroy', bill, class: "btn", :method => :delete, :data => {:turbo_confirm => 'Delete for real?'}) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <br>
 
-<%= link_to 'New bill', new_bill_path, class: "btn btn-primary"  %>
+<%= link_to 'New bill', new_bill_path, class: "btn"  %>
 
 
 
