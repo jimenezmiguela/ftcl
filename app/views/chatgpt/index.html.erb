@@ -1,0 +1,46 @@
+<h3>Chatbot Question</h3>
+<h6>Disclamer: ChatGPT is being used for response.<h6>
+
+<br>
+
+<%= form_with url: chatgpt_path, local: true, data: { turbo: false } do |f| %>
+  Enter Bill Measure:
+  <br>
+  <div>
+      <% f.label :name, style: "display: block" %>
+      <%= f.text_field :name %>
+  </div>
+
+  <% if params[:name] %>
+    <div>
+      <h6>You chose measure
+        <%= params[:name] %>.
+      </h6>
+    </div>
+  <% end %>
+
+<br>
+
+  Enter Question:
+  <br>
+  <div>
+      <% f.label :question, style: "display: block" %>
+      <%= f.text_area :question %>
+  </div>
+  <div>
+      <%= f.submit :Submit, class: "btn" %>
+  </div>
+<% end %>
+
+<br> 
+
+<% if @generated_text %>
+  <div>
+    <h5>Chatbot answer is: 
+    <br>
+      <%= "#{@generated_text}" %>
+    </h5> 
+  </div>
+<% end %>
+
+
