@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :texts, only: :index
   get '/texts' , to: 'texts#index'
   post '/texts', to: 'texts#index'
+  get '/chatgpt', to: 'chatgpt#index'
+  post '/chatgpt', to: 'chatgpt#index'
 end
